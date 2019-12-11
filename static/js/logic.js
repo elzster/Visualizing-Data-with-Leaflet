@@ -46,7 +46,7 @@ function createMap(earthquakes) {
 
     var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
-        maxZoom: 18,
+        maxZoom: 12,
         id: "mapbox.light",
         accessToken: API_KEY
     });
@@ -76,12 +76,11 @@ function createMap(earthquakes) {
         labels = [];
   
         div.innerHTML+='Magnitude<br><hr>'
-    
-        for (var i = 0; i < grades.length; i++) {
+        grades.forEach( i => {
             div.innerHTML +=
                 '<i style="background:' + getColor(grades[i] + 1) + '">&nbsp&nbsp&nbsp&nbsp</i> ' +
                 grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
+    })
     
     return div;
     };
