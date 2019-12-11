@@ -1,8 +1,11 @@
-var earthquakeurl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
+//Json Data from USGS
+var geoData = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
  
+//Cordinates set to Sanfrancisco
 var sanFranCoords = [37.77885586164994, -122.4213409423828]
 
-d3.json(earthquakeurl, data => {
+//Capture data variable from provided url
+d3.json(geoData, data => {
     createFeatures(data.features);
 });
 
