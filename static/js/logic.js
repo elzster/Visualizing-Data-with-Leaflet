@@ -55,26 +55,32 @@ function createMap(earthquakes) {
         id: "mapbox.light",
         accessToken: API_KEY
     });
- 
+
+    // Create a baseMaps object to hold the lightmap layer
     var baseMaps = {
         "Light Map": lightmap 
     };
     
+      // Create an overlayMaps object to hold the earthquakes layer
     var overlayMaps = {
         "Earthquakes": earthquakes
     };
 
+    // Create the map object with options
     var map = L.map("map", {
         center: sanFranCoords,
-        zoom: 4.5,
+        zoom: 6,
         layers: [lightmap, earthquakes]
     });
 
+    // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
     L.control.layers(baseMaps, overlayMaps, {collapsed: false})
              .addTo(map);
 
+    //define variable for legend
     var legend = L.control({position: 'bottomright'});
   
+    //append legend to map.
     legend.onAdd = map => {    
         var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 1, 2, 3, 4, 5],
