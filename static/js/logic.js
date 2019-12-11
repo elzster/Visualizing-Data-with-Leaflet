@@ -76,8 +76,7 @@ function createMap(earthquakes) {
         var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 1, 2, 3, 4, 5],
         labels = [];
-  
-        div.innerHTML+='Magnitude<br><hr>'
+        div.innerHTML+='<b><h4>Magnitude</h4></b><br><hr>'
         grades.forEach( i => {
             div.innerHTML +=
                 '<i style="background:' + getColor(grades[i] + 1) + '">&nbsp&nbsp&nbsp&nbsp</i> ' +
