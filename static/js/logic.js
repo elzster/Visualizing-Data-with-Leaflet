@@ -9,16 +9,7 @@ d3.json(geoData, data => {
     createFeatures(data.features);
 });
 
-function getColor(d) {
-
-    return d < 1 ? 'green' : 
-           d < 2 ? 'green' :
-           d < 3 ? 'lightgreen' :
-           d < 4 ? 'orange' :
-           d < 5 ? 'orange':
-                   'red';
-}
-
+//define function to go through datavariables for popup information.
 function createFeatures(earthquakeData) {
 
     function onEachFeature(feature, layer) {
@@ -26,7 +17,7 @@ function createFeatures(earthquakeData) {
             "</h3><hr><p><u>Occurrence:</u> " + new Date(feature.properties.time) + "</p>" +
             "</h3><p><u>Magnitude:</u> " + feature.properties.mag + "</p>");
     }
-
+    //Make variable to contain all information on markers for earthquakes
     var earthquakes = L.geoJSON(earthquakeData, {
         onEachFeature: onEachFeature,
         pointToLayer:  (feature, latlng) => {
@@ -41,8 +32,18 @@ function createFeatures(earthquakeData) {
             return L.circleMarker(latlng, geojsonMarkerOptions);
         }
     });
-    
+    //append markers to map.
     createMap(earthquakes);
+}
+//define colors to differentiate the magnitude of earthquakes
+function getColor(d) {
+
+    return d < 1 ? 'green' : 
+           d < 2 ? 'green' :
+           d < 3 ? 'lightgreen' :
+           d < 4 ? 'orange' :
+           d < 5 ? 'orange':
+                   'red';
 }
 
 function createMap(earthquakes) {
