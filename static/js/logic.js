@@ -85,7 +85,7 @@ function createMap(earthquakes) {
     
     return div;
     };
-    
+    //append legend to the map
     legend.addTo(map);
 }
 //define colors to differentiate the magnitude of earthquakes
