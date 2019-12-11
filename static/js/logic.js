@@ -35,16 +35,7 @@ function createFeatures(earthquakeData) {
     //append markers to map.
     createMap(earthquakes);
 }
-//define colors to differentiate the magnitude of earthquakes
-function getColor(d) {
 
-    return d < 1 ? 'green' : 
-           d < 2 ? 'green' :
-           d < 3 ? 'lightgreen' :
-           d < 4 ? 'orange' :
-           d < 5 ? 'orange':
-                   'red';
-}
 
 //create function to 
 function createMap(earthquakes) {
@@ -97,4 +88,14 @@ function createMap(earthquakes) {
     };
     
     legend.addTo(map);
+}
+//define colors to differentiate the magnitude of earthquakes
+function getColor(d) {
+
+    return d < 1 ? 'green' : 
+           d < 2 ? 'green' :
+           d < 3 ? 'lightgreen' :
+           d < 4 ? 'orange' :
+           d < 5 ? 'orange':
+                   'red';
 }
