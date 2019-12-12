@@ -72,7 +72,8 @@ function createMap(earthquakes) {
     var legend = L.control({position: 'bottomright'});
   
     //append legend to map.
-    legend.onAdd = map => {    
+    legend.onAdd = map => {
+
         var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 1, 2, 3, 4, 5],
         labels = [];
@@ -82,8 +83,7 @@ function createMap(earthquakes) {
                 '<i style="background:' + getColor(grades[i] + 1) + '">&nbsp&nbsp&nbsp&nbsp</i> ' +
                 grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
     })
-    
-    return div;
+        return div;
     };
     //append legend to the map
     legend.addTo(map);
@@ -91,7 +91,7 @@ function createMap(earthquakes) {
 //define colors to differentiate the magnitude of earthquakes
 function getColor(d) {
 
-    return d < 1 ? 'green' : 
+    return d < 1 ? 'lightgreen' : 
            d < 2 ? 'green' :
            d < 3 ? 'lightgreen' :
            d < 4 ? 'orange' :
