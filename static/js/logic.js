@@ -89,12 +89,11 @@ function createMap(earthquakes) {
     legend.addTo(map);
 }
 //define colors to differentiate the magnitude of earthquakes
-function getColor(d) {
-
-    return d < 1 ? 'lightgreen' : 
-           d < 2 ? 'green' :
-           d < 3 ? 'lightgreen' :
-           d < 4 ? 'orange' :
-           d < 5 ? 'orange':
+function getColor(color) {
+    return color < 1 ? 'blue' : 
+           color < 2 ? 'green' :
+           color < 3 ? 'yellow' :
+           color < 4 ? 'pink' :
+           color < 5 ? 'orange':
                    'red';
 }
