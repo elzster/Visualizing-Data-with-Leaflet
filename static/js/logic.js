@@ -37,9 +37,8 @@ function createFeatures(earthquakeData) {
 }
 
 
-//create function to 
+//create function to define baselayer on map.
 function createMap(earthquakes) {
-
     var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
         maxZoom: 12,
@@ -73,7 +72,6 @@ function createMap(earthquakes) {
   
     //append legend to map.
     legend.onAdd = map => {
-
         var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 1, 2, 3, 4, 5],
         labels = [];
@@ -90,10 +88,10 @@ function createMap(earthquakes) {
 }
 //define colors to differentiate the magnitude of earthquakes
 function getColor(color) {
-    return color < 1 ? 'blue' : 
-           color < 2 ? 'green' :
-           color < 3 ? 'yellow' :
-           color < 4 ? 'pink' :
-           color < 5 ? 'orange':
-                   'red';
+    return color <= 1 ? 'beige' : 
+           color <= 2 ? 'tan' :
+           color <= 3 ? 'brown' :
+           color <= 4 ? 'yellow' :
+           color <= 5 ? 'pink':
+           color >= 5 ? 'red': 'red';
 }
