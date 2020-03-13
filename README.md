@@ -1,6 +1,6 @@
 # Visiualizing Data with Leaflet
 
-![usgs](/images/1-Logo.png)
+![usgs](images/1-Logo.png)
 
 ## Project Scope:
 
@@ -10,4 +10,4 @@ After analyzing the dataset of recent earthquakes, we can see that due to the ge
 
 Below is a screenshot of the visualization:
 <br>
-![screen1](/images/screenshot1.png)
+![screen1](images/screenshot1.png)
